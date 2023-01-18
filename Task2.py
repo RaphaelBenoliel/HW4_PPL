@@ -191,7 +191,7 @@ class CalendarEntry:
             end_time = str(end)
             self.tasks[(start_time, end_time)] = task
         except TaskOverlapTimeError as e:
-            print(e)
+            print(type(e).__name__+':', e)
             new_start = input("Enter new start time: ")
             new_end = input("Enter new end time: ")
             self.addTask(task, new_start, new_end)
